@@ -20,7 +20,7 @@ sort_versions() {
 
 list_all_versions() {
   local major_version
-  for major_version in 10 9 8 7 6; do
+  for major_version in 11 10 9 8 7 6; do
     curl "${curl_opts[@]}" "${tomcat_archive_url}/tomcat-${major_version}/" |
       grep -o "<a href=\"v${major_version}[\.0-9]\+/\">" |
       grep -o "${major_version}\.[^/]\+"
